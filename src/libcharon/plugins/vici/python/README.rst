@@ -14,11 +14,11 @@ Example Usage
 
     >>> import vici
     >>> s = vici.Session()
-    >>> s.version()
+    >>> s.request('version')
     OrderedDict([('daemon', b'charon'), ('version', b'5.4.0'),
     ('sysname', b'Linux'), ('release', b'3.13.0-27-generic'), ('machine', b'x86_64')])
-    >>> s.load_pool({"p1": {"addrs": "10.0.0.0/24"}})
+    >>> s.request('load-pool', {"p1": {"addrs": "10.0.0.0/24"}})
     OrderedDict([('success', b'yes')])
-    >>> s.get_pools()
+    >>> s.request('get-pools')
     OrderedDict([('p1', OrderedDict([('base', b'10.0.0.0'), ('size', b'254'),
     ('online', b'0'), ('offline', b'0')]))])
